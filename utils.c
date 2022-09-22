@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 08:49:05 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/21 02:51:22 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/21 23:23:48 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strjoin_ps(char *s1, char *s2)
 	free (s1);
 	return (return_str);
 }
-// deneme12345
+
 void	init(t_stack *a, t_stack *b, char **p, char **argv)
 {
 	int	i;
@@ -72,4 +72,45 @@ void	ft_split_stacks(char *str, t_stack *a, t_stack *b)
 		free(splitted[i++]);
 	free(splitted);
 	ft_check_repeat(a, b);
+}
+int *ft_create_temp(t_stack *a)
+{
+	int	*temp;
+	int	i;
+
+	i = 0;
+	temp = malloc(sizeof(int) * a->size);
+	while (i < a->size)
+	{
+		temp[i] = a->array[i];
+		i++;
+	}
+	return (temp);
+}
+
+int *ft_sort_index(t_stack *a)
+{
+	int	i;
+	int	j;
+	int	*temp;
+	int max;
+
+	temp = ft_create_temp(a);
+	i=0;
+	while(i < a->size)
+	{
+		j = i;
+		while (j < a->size)
+		{
+			if (temp[i] > temp[j])
+			{
+				max = temp[i];
+				temp[i] = temp[j];
+				temp[j] = max;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (temp);
 }

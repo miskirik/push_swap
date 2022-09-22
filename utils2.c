@@ -1,39 +1,47 @@
-#include "push_swap.h"
-void	ft_rrb(t_stack *b)
-{
-	int	i;
-	int	sup;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/21 23:29:19 by miskirik          #+#    #+#             */
+/*   Updated: 2022/09/22 04:09:51 by miskirik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = b->size;
-	if (i > 2)
+#include "push_swap.h"
+
+void ft_make_index(t_stack *a, int *tab)
+{
+	int i;
+	int j;
+
+	i=0;
+	while (i < a->size)
 	{
-		sup = b->array[b->size - 1];
-		while (i > 1)
+		j = 0;
+		while (j < a->size)
 		{
-			b->array[i - 1] = b->array[i - 2];
-			i--;
+			if (a->array[i] == tab[j])
+				a->array[i] = j;
+			j++;
 		}
-		b->array[0] = sup;
-		ft_printf("rrb\n");
+		i++;
 	}
 }
-void	ft_rb(t_stack *b)
+int ft_pivot(t_stack *a)
 {
-	int	i;
-	int	k;
-	int	sup;
+	int i;
+	int min;
 
-	i = b->size;
-	k = 0;
-	sup = b->array[0];
-	if (b->size > 1)
+	i=0;
+	min=INT_MIN;
+	while (i < a->size)
 	{
-		while (i-- > 1)
-		{
-			b->array[k] = b->array[k + 1];
-			k++;
-		}
-		b->array[k] = sup;
-		ft_printf("rb\n");
+		if (a->array[i] < min)
+			min = a->array[i];
+		i++;
 	}
+	return(min);
 }

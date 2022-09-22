@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:52 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/21 02:54:25 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/21 23:01:03 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +75,23 @@ void	ft_check_sort(t_stack *a, t_stack *b)
 	if (a->size == 2)
 		if (a->array[0] > a->array[1])
 			ft_sa(a);
-	if (a->size ==3)
+	if (a->size == 3)
 		if (ft_check_sorted(a))
 			ft_swap_trois(a);
-	if (a->size ==4)
+	if (a->size == 4)
 		if (ft_check_sorted(a))
 			ft_swap_quatre(a,b);
-	if (a->size ==5)
+	if (a->size == 5)
 	{
 		if (ft_check_sorted(a))
 			ft_swap_cinq(a,b);
 	}
 	if (a->size > 5 )
 		if (ft_check_sorted(a))
-			printf("Baaaba şimdilik bu kdar değeri alamıyorum kb");
+		{
+			//printf("Baaaba şimdilik bu kdar değeri alamıyorum kb");
+			ft_sort_plus(a,b);
+		}
 }
 int ft_check_sorted(t_stack *a)
 {
