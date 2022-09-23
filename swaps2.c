@@ -1,4 +1,5 @@
 #include "push_swap.h"
+
 void	ft_rrb(t_stack *b)
 {
 	int	i;
@@ -17,6 +18,7 @@ void	ft_rrb(t_stack *b)
 		ft_printf("rrb\n");
 	}
 }
+
 void	ft_rb(t_stack *b)
 {
 	int	i;
@@ -37,6 +39,12 @@ void	ft_rb(t_stack *b)
 		ft_printf("rb\n");
 	}
 }
+/**
+ * It takes the first half of the stack and pushes it to the second stack
+ *
+ * @param a The stack that we're sorting.
+ * @param b the stack to push to
+ */
 void ft_push_b(t_stack *a,t_stack *b)
 {
 	int pivot;
@@ -47,16 +55,18 @@ void ft_push_b(t_stack *a,t_stack *b)
 	i=a->size;
 	j= i / 2;
 	min = ft_pivot(a);
-	pivot=j + min;
+	pivot=j + ft_pivot(a);
 	if(i < 3)
 		return ;
-	while(i > i-j)
+	//while(i > i - j)
+	while(a->size > i-j)
 	{
 		if(a->array[0] < pivot)
 			ft_pb(a,b,1);
 		else
 			ft_ra(a,1);
 	}
+	printf("girdi\n");
 	ft_push_b(a,b);
 }
 void ft_push_a(t_stack *a,t_stack *b)
@@ -64,9 +74,11 @@ void ft_push_a(t_stack *a,t_stack *b)
 	int i;
 	int j;
 	int min;
+	int *temp;
 
-	i=b->size;
-	j= i / 2;
-	min = ft_pivot(b);
-	//burada kaldım buradan devam etmeliyim bb :)
+	temp=ft_calloc(sizeof(int),b->size);
+	while (b->size)
+	{
+		ft_calc(a,b, &temp);
+	}
 }

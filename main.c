@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 02:51:38 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/21 03:29:31 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/23 02:28:54 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,4 @@ int	main(int argc, char **argv)
 	init(a, b, &p, argv);
 	ft_check(p, a, b);
 	ft_check_sort(a, b);
-	int i=0;
-	while (i < a->size && !(a->size>4))
-	{
-		printf("%d ", a->array[i]);
-		i++;
-	}
 }

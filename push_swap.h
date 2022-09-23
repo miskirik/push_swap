@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:57 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/21 23:34:32 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/23 12:06:09 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_split_stacks(char *str, t_stack *a, t_stack *b);
 void	ft_check_repeat(t_stack *a, t_stack *b);
 void	ft_check_sort(t_stack *a, t_stack *b);
 void	ft_check_symbols(char *str, t_stack *a, t_stack *b);
-int		ft_check(char *str, t_stack *a, t_stack *b);
+void	ft_check(char *str, t_stack *a, t_stack *b);
 void	ft_error(t_stack *a, t_stack *b, int err);
 void	ft_check_sort(t_stack *a, t_stack *b);
 void	ft_sa(t_stack *a);
@@ -51,10 +51,10 @@ void	ft_rb(t_stack *b);
 void ft_index(t_stack *a);
 int ft_floor(t_stack *a, int x,int len);
 int	ft_min(int *p, int len);
-int *ft_calc(t_stack *a, t_stack *b);
-void	ft_prep_a(t_stack *a, t_stack *b, int index);
-int	ft_prep_b(t_stack *a, t_stack *b, int *p);
+void ft_calc(t_stack *a, t_stack *b, int **temp);
 void ft_send_to_sup(t_stack *a, t_stack *b, int *p);
 void ft_sort_plus(t_stack *a,t_stack *b);
 void ft_make_index(t_stack *a, int *tab);
+void ft_push_b(t_stack *a,t_stack *b);
+void ft_push_a(t_stack *a,t_stack *b);
 #endif

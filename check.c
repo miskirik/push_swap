@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:52 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/21 23:01:03 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/22 21:02:50 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,9 @@ void	ft_check_symbols(char *str, t_stack *a, t_stack *b)
 	ft_split_stacks(str, a, b);
 }
 
-int	ft_check(char *str, t_stack *a, t_stack *b)
+void	ft_check(char *str, t_stack *a, t_stack *b)
 {
 	int			i;
-	static int	count;
-
-	count = 0;
 	i = 0;
 	if (!str)
 		ft_error(a,b,3);
@@ -46,9 +43,7 @@ int	ft_check(char *str, t_stack *a, t_stack *b)
 			ft_error(a, b, 1);
 		i++;
 	}
-	count++;
 	ft_check_symbols(str, a, b);
-	return (count);
 }
 
 void	ft_check_repeat(t_stack *a, t_stack *b)

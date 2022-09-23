@@ -52,6 +52,9 @@ void	ft_pa(t_stack *a, t_stack *b,int c)
 	{
 	if(b->size <=0)
 		return;
+	/*
+	push b yapıldığı için array atılan değerin bir sonrakini tutuyor. Biz tekrardan push a yapacağımız zaman arrayın ilk elemanı boş oluyor. Bu yüzden arrayı bir geri alıyoruz.
+	*/
 	a->array--;
 	a->array[0]=b->array[0];
 	a->size++;
