@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:29:19 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/23 18:06:36 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:27:15 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,17 @@ void ft_make_index(t_stack *a, int *tab)
 	int i;
 	int j;
 
-	i=0;
+	i = 0;
 	while (i < a->size)
 	{
 		j = 0;
 		while (j < a->size)
 		{
 			if (a->array[i] == tab[j])
+			{
 				a->array[i] = j;
+				break ;
+			}
 			j++;
 		}
 		i++;

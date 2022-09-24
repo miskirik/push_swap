@@ -60,19 +60,12 @@ void ft_push_b(t_stack *a,t_stack *b)
 	if(i < 3)
 		return ;
 	//while(i > i - j)
-
-	int abc = a->array[0];
 	while(a->size > i-j)
 	{
 		if(a->array[0] < pivot)
 			ft_pb(a,b,1);
 		else
-		{
-			printf("a=%d pivot =%d \n",a->array[0],pivot);
 			ft_ra(a,1);
-		}
-		if (abc == a->array[0])
-			pause();
 	}
 	ft_push_b(a,b);
 }
