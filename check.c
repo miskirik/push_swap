@@ -6,12 +6,19 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:52 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/22 21:02:50 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:59:13 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * It checks for invalid symbols in the input string
+ *
+ * @param str the string of numbers that we're checking
+ * @param a pointer to the first stack
+ * @param b the stack that will be used to store the numbers that are not in order
+ */
 void	ft_check_symbols(char *str, t_stack *a, t_stack *b)
 {
 	int	i;
@@ -30,6 +37,13 @@ void	ft_check_symbols(char *str, t_stack *a, t_stack *b)
 	ft_split_stacks(str, a, b);
 }
 
+/**
+ * It checks the input for errors
+ *
+ * @param str the string to be checked
+ * @param a the first stack
+ * @param b the stack b
+ */
 void	ft_check(char *str, t_stack *a, t_stack *b)
 {
 	int			i;
@@ -46,6 +60,12 @@ void	ft_check(char *str, t_stack *a, t_stack *b)
 	ft_check_symbols(str, a, b);
 }
 
+/**
+ * It checks if there are any repeated numbers in the stack
+ *
+ * @param a pointer to the first stack
+ * @param b the stack that is not being sorted
+ */
 void	ft_check_repeat(t_stack *a, t_stack *b)
 {
 	int	i;
@@ -65,6 +85,12 @@ void	ft_check_repeat(t_stack *a, t_stack *b)
 		j = 1 + i;
 	}
 }
+/**
+ * It checks if the stack is sorted, if it is, it sorts it
+ *
+ * @param a the first stack
+ * @param b the number of elements to be sorted
+ */
 void	ft_check_sort(t_stack *a, t_stack *b)
 {
 	if (a->size == 2)
@@ -88,6 +114,13 @@ void	ft_check_sort(t_stack *a, t_stack *b)
 			ft_sort_plus(a,b);
 		}
 }
+/**
+ * It checks if the stack is sorted
+ *
+ * @param a the stack to check
+ *
+ * @return 1 if the array is not sorted, 0 if it is.
+ */
 int ft_check_sorted(t_stack *a)
 {
 	int i;

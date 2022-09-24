@@ -86,14 +86,9 @@ void	ft_swap_cinq(t_stack *a, t_stack *b)
 
 void ft_sort_plus(t_stack *a,t_stack *b)
 {
-	int i;
-	int c;
 	int *tab;
-	(void)b;
-	(void)c;
-	i=0;
 	tab=ft_sort_index(a);
 	ft_make_index(a,tab);
 	ft_push_b(a,b);
-	//ft_push_a(a,b);
+	ft_push_a(a,b);
 }

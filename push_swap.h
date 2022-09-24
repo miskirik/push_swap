@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:57 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/23 12:06:09 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:05:51 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,13 @@ void	ft_rb(t_stack *b);
 void ft_index(t_stack *a);
 int ft_floor(t_stack *a, int x,int len);
 int	ft_min(int *p, int len);
-void ft_calc(t_stack *a, t_stack *b, int **temp);
+int *ft_calc(t_stack *a, t_stack *b);
 void ft_send_to_sup(t_stack *a, t_stack *b, int *p);
 void ft_sort_plus(t_stack *a,t_stack *b);
 void ft_make_index(t_stack *a, int *tab);
 void ft_push_b(t_stack *a,t_stack *b);
 void ft_push_a(t_stack *a,t_stack *b);
+int	ft_pre_b(t_stack *b, int *p);
+void	ft_pre_a(t_stack*a, t_stack *b);
+int	ft_min(int *p, int len);
 #endif

@@ -52,21 +52,28 @@ void ft_push_b(t_stack *a,t_stack *b)
 	int j;
 	int min;
 
-	i=a->size;
-	j= i / 2;
+	i = 0;
+	j= a->size / 2;
 	min = ft_pivot(a);
-	pivot=j + ft_pivot(a);
+	pivot=a->size / 2 + ft_pivot(a);
+	i=a->size;
 	if(i < 3)
 		return ;
 	//while(i > i - j)
+
+	int abc = a->array[0];
 	while(a->size > i-j)
 	{
 		if(a->array[0] < pivot)
 			ft_pb(a,b,1);
 		else
+		{
+			printf("a=%d pivot =%d \n",a->array[0],pivot);
 			ft_ra(a,1);
+		}
+		if (abc == a->array[0])
+			pause();
 	}
-	printf("girdi\n");
 	ft_push_b(a,b);
 }
 void ft_push_a(t_stack *a,t_stack *b)
@@ -76,9 +83,28 @@ void ft_push_a(t_stack *a,t_stack *b)
 	int min;
 	int *temp;
 
-	temp=ft_calloc(sizeof(int),b->size);
+	min =0;
 	while (b->size)
 	{
-		ft_calc(a,b, &temp);
+		temp = ft_calc(a,b);
+		ft_pre_b(b,temp);
+		ft_pre_a(a,b);
+		ft_pa(a,b,1);
+	}
+	i=ft_pivot(a);
+	j=1;
+	while (i !=a->array[min])
+		min++;
+	if(min > a->size / 2)
+	{
+		min=a->size-min;
+		j=0;
+	}
+	while (min--)
+	{
+		if (j == 0)
+			ft_rra(a,1);
+		else
+			ft_ra(a,1);
 	}
 }

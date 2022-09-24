@@ -66,17 +66,22 @@ void	ft_pa(t_stack *a, t_stack *b,int c)
 void	ft_ra(t_stack *a,int c)
 {
 	int i;
+	int count;
 	int temp;
 	while(c--)
 	{
-		i =0;
-		while (i < a->size - 1)
+		i = a->size;
+		count = 0;
+		temp=a->array[0];
+		if(a->size > 1)
 		{
-			temp = a->array[i + 1];
-			a->array[i + 1] = a->array[i];
-			a->array[i] = temp;
-			++i;
+			while (i-- > 1)
+			{
+				a->array[count] = a->array[count+1];
+				count++;
+			}
+			a->array[count] = temp;
+			ft_printf("ra\n");
 		}
 	}
-	ft_printf("ra\n");
 }
