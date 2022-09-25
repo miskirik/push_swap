@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 18:04:49 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/24 16:44:20 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/25 21:41:28 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long long	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int			i;
+	int			sign;
 	long long	numb;
 
 	i = 0;
@@ -30,10 +30,7 @@ long long	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		numb = (str[i] - '0') + (numb * 10);
-		i++;
-	}
+		numb = (str[i++] - '0') + (numb * 10);
 	if ((numb * sign) > 2147483647 || (numb * sign) < -2147483648)
 	{
 		write(2, "Error\n", 6);

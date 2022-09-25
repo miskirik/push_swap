@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 08:49:05 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/23 14:15:50 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/25 20:41:18 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void	ft_split_stacks(char *str, t_stack *a, t_stack *b)
 	free(splitted);
 	ft_check_repeat(a, b);
 }
-int *ft_create_temp(t_stack *a)
+
+int	*ft_create_temp(t_stack *a)
 {
 	int	*temp;
 	int	i;
@@ -88,16 +89,16 @@ int *ft_create_temp(t_stack *a)
 	return (temp);
 }
 
-int *ft_sort_index(t_stack *a)
+int	*ft_sort_index(t_stack *a)
 {
 	int	i;
 	int	j;
 	int	*temp;
-	int max;
+	int	max;
 
 	temp = ft_create_temp(a);
-	i=0;
-	while(i < a->size)
+	i = 0;
+	while (i < a->size)
 	{
 		j = i;
 		while (j < a->size)

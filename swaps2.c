@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swaps2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/25 21:09:53 by miskirik          #+#    #+#             */
+/*   Updated: 2022/09/25 21:18:47 by miskirik         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_rrb(t_stack *b)
@@ -39,65 +51,54 @@ void	ft_rb(t_stack *b)
 		ft_printf("rb\n");
 	}
 }
-/**
- * It takes the first half of the stack and pushes it to the second stack
- *
- * @param a The stack that we're sorting.
- * @param b the stack to push to
- */
-void ft_push_b(t_stack *a,t_stack *b)
+
+void	ft_push_b(t_stack *a, t_stack *b)
 {
-	int pivot;
-	int i;
-	int j;
-	int min;
+	int	pivot;
+	int	i;
+	int	j;
+	int	min;
 
 	i = 0;
-	j= a->size / 2;
+	j = a->size / 2;
 	min = ft_pivot(a);
-	pivot=a->size / 2 + ft_pivot(a);
-	i=a->size;
-	if(i < 3)
+	pivot = a->size / 2 + ft_pivot(a);
+	i = a->size;
+	if (i < 3)
 		return ;
-	//while(i > i - j)
-	while(a->size > i-j)
+	while (a->size > i - j)
 	{
-		if(a->array[0] < pivot)
-			ft_pb(a,b,1);
+		if (a->array[0] < pivot)
+			ft_pb(a, b, 1);
 		else
-			ft_ra(a,1);
+			ft_ra(a, 1);
 	}
-	ft_push_b(a,b);
+	ft_push_b(a, b);
 }
-void ft_push_a(t_stack *a,t_stack *b)
-{
-	int i;
-	int j;
-	int min;
-	int *temp;
 
-	min =0;
+void	ft_push_a(t_stack *a, t_stack *b)
+{
+	int	i;
+	int	j;
+	int	min;
+
+	min = 0;
 	while (b->size)
-	{
-		temp = ft_calc(a,b);
-		ft_pre_b(b,temp);
-		ft_pre_a(a,b);
-		ft_pa(a,b,1);
-	}
-	i=ft_pivot(a);
-	j=1;
-	while (i !=a->array[min])
+		ft_helper(a, b);
+	i = ft_pivot(a);
+	j = 1;
+	while (i != a->array[min])
 		min++;
-	if(min > a->size / 2)
+	if (min > a->size / 2)
 	{
-		min=a->size-min;
-		j=0;
+		min = a->size - min;
+		j = 0;
 	}
 	while (min--)
 	{
 		if (j == 0)
-			ft_rra(a,1);
+			ft_rra(a, 1);
 		else
-			ft_ra(a,1);
+			ft_ra(a, 1);
 	}
 }
