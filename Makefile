@@ -39,6 +39,9 @@ ffclean: fclean
 	@make fclean -C libft
 	@make fclean -C ft_printf
 
+norm:
+	@norminette $(SRC)
+
 re: fclean all
 
 .PHONY: all re clean fclean ffclean
