@@ -6,12 +6,17 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:53:51 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 21:09:19 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 00:20:00 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+	ft_sa fonksiyonu stackin en ustundeki iki elemani yer degistirir.
+	1	2
+	2	1
+	3	3
+*/
 void	ft_sa(t_stack *a)
 {
 	int	temp;
@@ -24,7 +29,12 @@ void	ft_sa(t_stack *a)
 		ft_printf("sa\n");
 	}
 }
-
+/*
+	ft_rra fonksiyonu her elemanı bir index aşağı kaydırır.
+	1	3
+	2	1
+	3	2
+*/
 void	ft_rra(t_stack *a, int c)
 {
 	int	i;
@@ -46,7 +56,12 @@ void	ft_rra(t_stack *a, int c)
 		}
 	}
 }
-
+/*
+	ft_pb fonksiyonu stack b nin en ustune stack a nin en ustundeki elemani ekler.
+	b array pointeri bir sonraki veriyi tuttuğu için işlem öncesinde pointer 1 azaltılır. Bu sayede 0 index tutulur.
+	a size azaltılır. b size arttırılır.
+	a array pointeri bir sonraki veriyi tuttuğu için işlem sonrasında pointer 1 arttırılır.
+*/
 void	ft_pb(t_stack *a, t_stack *b, int c)
 {
 	while (c--)
@@ -61,7 +76,12 @@ void	ft_pb(t_stack *a, t_stack *b, int c)
 		ft_printf("pb\n");
 	}
 }
-
+/*
+	ft_pa fonksiyonu stack a nin en ustune stack b nin en ustundeki elemani ekler.
+	a array pointeri bir sonraki veriyi tuttuğu için işlem öncesinde pointer 1 azaltılır. Bu sayede 0 index tutulur.
+	b size azaltılır. a size arttırılır.
+	b array pointeri bir sonraki veriyi tuttuğu için işlem sonrasında pointer 1 arttırılır.
+*/
 void	ft_pa(t_stack *a, t_stack *b, int c)
 {
 	while (c--)
@@ -76,7 +96,12 @@ void	ft_pa(t_stack *a, t_stack *b, int c)
 		ft_printf("pa\n");
 	}
 }
-
+/*
+	ft_ra fonksiyonu her elemanı bir index yukarı kaydırır.
+	1	2
+	2	3
+	3	1
+*/
 void	ft_ra(t_stack *a, int c)
 {
 	int	i;

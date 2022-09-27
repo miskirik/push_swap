@@ -6,12 +6,15 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 08:49:05 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 20:41:18 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 01:07:05 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+	return_str veriyi boşluklar ekleyerek tek bir stringe cevirir. Çevirdiği veriyi return eder.
+*/
 char	*ft_strjoin_ps(char *s1, char *s2)
 {
 	char	*return_str;
@@ -32,6 +35,10 @@ char	*ft_strjoin_ps(char *s1, char *s2)
 	return (return_str);
 }
 
+/*
+	Stack yapılarının sizleri tanımlanır.
+	p pointerı ile sayıların boşluklarla ayrılmış bir şekilde tutulduğu string oluşturulur.
+*/
 void	init(t_stack *a, t_stack *b, char **p, char **argv)
 {
 	int	i;
@@ -45,7 +52,14 @@ void	init(t_stack *a, t_stack *b, char **p, char **argv)
 		*p = ft_strjoin_ps(*p, argv[i]);
 	}
 }
-
+/*
+	splitted boşluklara göre bölünmüş veriyi tutar.
+	while döngüsü ile verinin kaç elemanlı olduğu bulunur.
+	malloc ile verinin tutulacağı stack yapıları oluşturulur.
+	while döngüsünde veriler atoi ile int tipine çevrilerek a stackine atılır.
+	free ile splitted için oluşturulan alan temizlenir.
+	Atama sonrası ft_check_repeat fonksiyonu ile verilerin tekrarlı olup olmadığı kontrol edilir.
+*/
 void	ft_split_stacks(char *str, t_stack *a, t_stack *b)
 {
 	int		i;
@@ -73,7 +87,9 @@ void	ft_split_stacks(char *str, t_stack *a, t_stack *b)
 	free(splitted);
 	ft_check_repeat(a, b);
 }
-
+/*
+	fonksiyon a stackinde bulunan veriler ile temp verisi oluşturur.
+*/
 int	*ft_create_temp(t_stack *a)
 {
 	int	*temp;
@@ -88,7 +104,13 @@ int	*ft_create_temp(t_stack *a)
 	}
 	return (temp);
 }
-
+/*
+	ilk olarak ft_create_temp fonksiyonu ile a stackinin kopyası oluşturulur.
+	oluşturulan kopya ile veri sıralanır.
+	sıralanan veri return edilir.
+	veri=8 1 9 2 7 3 6 4 5
+	return=1 2 3 4 5 6 7 8 9
+*/
 int	*ft_sort_index(t_stack *a)
 {
 	int	i;

@@ -6,12 +6,18 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 02:51:38 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 20:39:51 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/26 23:38:23 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+	A ve B olarak iki stack olusturulur.
+	init fonksiyonunda ilk veriler olusturulur.
+	ft_check fonksiyonunda verilerin dogrulugu kontrol edilir.
+	ft_check_sort fonksiyonunda veriler siralanir.
+*/
 int	main(int argc, char **argv)
 {
 	t_stack	*a;

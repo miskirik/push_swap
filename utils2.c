@@ -6,12 +6,19 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:29:19 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 21:39:23 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 03:00:05 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+	sıralanan verilerin bulunduğu tab verisi üzerinden indexleme oluşturulur.
+	döngü içerisinde verilerin hangi indexe sahip olduğu kontrol edilir.
+	tab verisi üzerinden kontrol sağlanır verinin tab verisine eşit olması durumunda j değeri index olarak atanır.
+	tab = 1 2 3 4 5 6 7 8 9
+	a->array = 9 8 7 6 5 4 3 2 1
+	index sonrası a->array = 8 7 6 5 4 3 2 1 0
+*/
 void	ft_make_index(t_stack *a, int *tab)
 {
 	int	i;
@@ -33,7 +40,9 @@ void	ft_make_index(t_stack *a, int *tab)
 		i++;
 	}
 }
-
+/*
+	ft_pivot fonksiyonu ile en küçük veri bulunur.
+*/
 int	ft_pivot(t_stack *a)
 {
 	int	i;

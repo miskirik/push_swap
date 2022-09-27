@@ -6,12 +6,16 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:52 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 20:43:57 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 00:11:28 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+	Verilerin sembolleri kontrol edilir.
+	--9 ++9 -+9 9* +*9 gibi hatalı sembol kullanımı durumunda error verilir.
+	Verinin sorunsuz olması durumunda ft_split_stacks fonksiyonuna gonderilir.
+*/
 void	ft_check_symbols(char *str, t_stack *a, t_stack *b)
 {
 	int	i;
@@ -29,7 +33,11 @@ void	ft_check_symbols(char *str, t_stack *a, t_stack *b)
 	}
 	ft_split_stacks(str, a, b);
 }
-
+/*
+	Verilerin doğru bir biçimde girildiğini kontrol eder.
+	Hata olması durumunda error döndürür.
+	Hata olmaması durumunda ft_check_symbols fonksiyonuna yollar.
+*/
 void	ft_check(char *str, t_stack *a, t_stack *b)
 {
 	int	i;
@@ -46,7 +54,10 @@ void	ft_check(char *str, t_stack *a, t_stack *b)
 	}
 	ft_check_symbols(str, a, b);
 }
-
+/*
+	stack içerisinde a size kadar çalışarak verinin içerisinde tekrar eden veri olup olmadığı kontrol edilir.
+	tekrar eden veri varsa error döndürür.
+*/
 void	ft_check_repeat(t_stack *a, t_stack *b)
 {
 	int	i;
@@ -66,7 +77,12 @@ void	ft_check_repeat(t_stack *a, t_stack *b)
 		j = 1 + i;
 	}
 }
-
+/*
+	Sorunsuz olduğu bilinen verilerin sıralanması için gerekli fonksiyonlara yollar.
+	Veri eğer 2 elemanlı ise sıralama yapılır.
+	Veri eğer 2> elemanlı ise ilk olarak girilen verinin sıralı olup olmadığı kontrol edilir.
+	Veri sıralı değil ise sıralama fonksiyonuna yollanır.
+*/
 void	ft_check_sort(t_stack *a, t_stack *b)
 {
 	if (a->size == 2)

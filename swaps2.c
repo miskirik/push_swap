@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:09:53 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 21:18:47 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 02:34:32 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,15 @@ void	ft_rb(t_stack *b)
 		ft_printf("rb\n");
 	}
 }
-
+/*
+	bu fonksiyonda a size 3 ten küçük olana kadar recursive olarak veri işlenir.
+	min  ft_pivottan gelen veriyi tutar.
+	pivot ise a sizeın yarısı ile pivotun toplamını tutar.
+	if kontrolü ile a sizeının 3 ten küçük olması durumunda fonksiyon durdurulur.
+	while döngüsü ile a size  a size - a size /2 den büyük olduğu sürece çalışır
+	a stackin en üstündeki veri pivotdan küçükse ft_pb fonksiyonu ile b ye gönderilir.
+	değil ise ft_ra fonksiyonu ile a stackin en üstündeki veri a stackin en altına gönderilir.
+*/
 void	ft_push_b(t_stack *a, t_stack *b)
 {
 	int	pivot;
@@ -75,7 +83,9 @@ void	ft_push_b(t_stack *a, t_stack *b)
 	}
 	ft_push_b(a, b);
 }
-
+/*
+	Bu fonksiyonda b size bitene kadar helper içerisindeki fonksiyonları çağırır.
+*/
 void	ft_push_a(t_stack *a, t_stack *b)
 {
 	int	i;

@@ -12,6 +12,7 @@
 		"unordered_map": "c",
 		"utility": "c",
 		"vector": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"ios": "c"
 	}
 }
