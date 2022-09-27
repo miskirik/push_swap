@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:57 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 21:18:16 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:10:27 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 {
 	int	*array;
 	int	size;
+	int *start;
 }				t_stack;
 
 void	init(t_stack *a, t_stack *b, char **p, char **argv);

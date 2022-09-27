@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:44:57 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 20:48:35 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 08:23:37 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	ft_sort_plus(t_stack *a, t_stack *b)
 
 	tab = ft_sort_index(a);
 	ft_make_index(a, tab);
+	free(tab);
 	ft_push_b(a, b);
 	ft_push_a(a, b);
 }

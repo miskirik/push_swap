@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 08:49:05 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 20:41:18 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:04:41 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,10 @@ void	ft_split_stacks(char *str, t_stack *a, t_stack *b)
 		i++;
 		c++;
 	}
+	b->start = b->array;
 	b->array += c;
 	i = 0;
-	while (splitted[i])
+	while (i < a->size)
 		free(splitted[i++]);
 	free(splitted);
 	ft_check_repeat(a, b);

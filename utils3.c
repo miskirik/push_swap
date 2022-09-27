@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:21:50 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 21:40:00 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:09:44 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_helper(t_stack *a, t_stack *b)
 
 	temp = ft_calc(a, b);
 	ft_pre_b(b, temp);
+	free(temp);
 	ft_pre_a(a, b);
 	ft_pa(a, b, 1);
 }
