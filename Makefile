@@ -40,7 +40,7 @@ ffclean: fclean
 	@make fclean -C ft_printf
 
 norm:
-	@norminette $(SRC)
+	@norminette $(SRC) push_swap.h
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 20:44:14 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/25 20:44:46 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:43:23 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	ft_error(t_stack *a, t_stack *b, int err)
 		write(2, "Error\n", 6);
 	if (err == 3)
 		write(2, "Error\n", 6);
-	exit(0);
+	ft_free(a, b);
 }

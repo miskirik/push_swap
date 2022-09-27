@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:57 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 11:10:27 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:44:03 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 {
 	int	*array;
 	int	size;
-	int *start;
+	int	*start;
 }				t_stack;
 
 void	init(t_stack *a, t_stack *b, char **p, char **argv);
@@ -54,6 +54,7 @@ void	ft_push_b(t_stack *a, t_stack *b);
 void	ft_push_a(t_stack *a, t_stack *b);
 void	ft_pre_a(t_stack*a, t_stack *b);
 void	ft_helper(t_stack *a, t_stack *b);
+void	ft_free(t_stack *a, t_stack *b);
 char	*ft_strjoin_ps(char *s1, char *s2);
 int		ft_pre_b(t_stack *b, int *p);
 int		ft_floor(t_stack *a, int x, int len);

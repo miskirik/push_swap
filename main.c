@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 02:51:38 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 11:24:00 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:42:49 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	init(a, b, &p, argv);
 	ft_check(p, a, b);
 	ft_check_sort(a, b);
+	ft_free(a, b);
 	free(p);
 	return (0);
 }

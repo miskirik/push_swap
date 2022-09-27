@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:21:50 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 11:09:44 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:47:52 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,14 @@ void	ft_helper(t_stack *a, t_stack *b)
 	free(temp);
 	ft_pre_a(a, b);
 	ft_pa(a, b, 1);
+}
+
+void	ft_free(t_stack *a, t_stack *b)
+{
+	b->array = b->start;
+	free(b->array);
+	free(b);
+	free(a->array);
+	free(a);
+	exit (0);
 }
