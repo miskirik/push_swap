@@ -6,12 +6,17 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:09:53 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 02:34:32 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 03:25:16 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
+	ft_rrb fonksiyonu her elemanı bir index aşağı kaydırır.
+	1	3
+	2	1
+	3	2
+*/
 void	ft_rrb(t_stack *b)
 {
 	int	i;
@@ -30,7 +35,12 @@ void	ft_rrb(t_stack *b)
 		ft_printf("rrb\n");
 	}
 }
-
+/*
+	ft_rb fonksiyonu her elemanı bir index yukarı kaydırır.
+	1	2
+	2	3
+	3	1
+*/
 void	ft_rb(t_stack *b)
 {
 	int	i;
@@ -85,6 +95,11 @@ void	ft_push_b(t_stack *a, t_stack *b)
 }
 /*
 	Bu fonksiyonda b size bitene kadar helper içerisindeki fonksiyonları çağırır.
+	daha sonrasında küçük verinin indexini bulana kadar while döngüm çalışır.
+	eğer index size /2 den büyük ise minumumu a size - dan çıkarıp yeni min bulunur.
+	daha sonrasında mine gelene kadar while döngüsü çalışır.
+	eğer min a size /2 den büyük ise ft_rra fonksiyonu ile a stackin en altındaki veri a stackin en üstüne gönderilir.
+	değil ise ft_ra fonksiyonu ile a stackin en üstündeki veri a stackin en altına gönderilir.
 */
 void	ft_push_a(t_stack *a, t_stack *b)
 {

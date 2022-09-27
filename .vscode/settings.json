@@ -13,6 +13,9 @@
 		"utility": "c",
 		"vector": "c",
 		"push_swap.h": "c",
-		"ios": "c"
+		"ios": "c",
+		"chrono": "c",
+		"limits": "c",
+		"ratio": "c"
 	}
 }

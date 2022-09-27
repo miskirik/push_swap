@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 09:26:52 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 00:11:28 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 03:22:24 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,11 @@ void	ft_check_sort(t_stack *a, t_stack *b)
 		if (ft_check_sorted(a))
 			ft_sort_plus(a, b);
 }
-
+/*
+	Verinin sıralı olup olmadığını kontrol eder.
+	Veri sıralı ise 1 döndürür.
+	Veri sıralı değil ise 0 döndürür.
+*/
 int	ft_check_sorted(t_stack *a)
 {
 	int	i;

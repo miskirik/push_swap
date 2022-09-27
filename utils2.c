@@ -6,7 +6,7 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:29:19 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 03:00:05 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 03:18:53 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ int	ft_pivot(t_stack *a)
 	}
 	return (min);
 }
-
+/*
+	ft_calc fonksiyonu ile b stacki verilerin a stackine gönderilmesi için gerken hamle sayısı hesaplanır.
+*/
 int	*ft_calc(t_stack *a, t_stack *b)
 {
 	int	i;
@@ -82,6 +84,9 @@ int	*ft_calc(t_stack *a, t_stack *b)
 	return (tmp);
 }
 
+/*
+	ft_floor fonksiyonu ile en küçük elemanın indexi bulunur.
+ */
 int	ft_floor(t_stack *s, int x, int len)
 {
 	int	i;
@@ -110,7 +115,9 @@ int	ft_floor(t_stack *s, int x, int len)
 	}
 	return (index);
 }
-
+/*
+	ft_min fonksiyonu ile en küçük elemanın indexi bulunur.
+*/
 int	ft_min(int *p, int len)
 {
 	int	min;

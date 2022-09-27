@@ -6,12 +6,15 @@
 /*   By: miskirik <miskirik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 21:21:50 by miskirik          #+#    #+#             */
-/*   Updated: 2022/09/27 02:59:07 by miskirik         ###   ########.fr       */
+/*   Updated: 2022/09/27 03:24:21 by miskirik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+	en küçük elemanı bulur ve en küçük elemanı bulunduğu yere getirir.
+*/
 void	ft_pre_a(t_stack*a, t_stack *b)
 {
 	int	len;
@@ -33,6 +36,9 @@ void	ft_pre_a(t_stack*a, t_stack *b)
 	}
 }
 
+/*
+	en küçük elemanı bulur ve en küçük elemanı bulunduğu yere getirir.
+*/
 int	ft_pre_b(t_stack *b, int *p)
 {
 	int	len;
@@ -56,7 +62,9 @@ int	ft_pre_b(t_stack *b, int *p)
 	}
 	return (end);
 }
-
+/*
+	5 > elemanlı verilerin sıralanması esnasında gereken fonksiyonları içeren bir fonksiyondur.
+*/
 void	ft_helper(t_stack *a, t_stack *b)
 {
 	int	*temp;
